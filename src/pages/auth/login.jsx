@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Form } from '../../components/form'
 import { TextField } from '../../components/text-field'
+import { useNavigate } from "react-router-dom"
 
 export const LoginPage = () => {
   const [form, setForm] = useState({
     username: '',
     password: '',
   })
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -26,6 +28,7 @@ export const LoginPage = () => {
       .then(res => res.json())
       .then((data) => {
         localStorage.setItem('token', data.token)
+        navigate('/')
       })
   }
 
