@@ -1,17 +1,6 @@
 import { useState } from "react"
-import styled from 'styled-components'
 import { Form } from '../../components/form'
-
-const Input = styled.input`
-  margin-bottom: 25px;
-  padding: 0 20px;
-  height: 50px;
-  border-radius: 25px;
-  border: none;
-  background-color: ${({ theme }) => theme.colors.body};
-  font-size: 16px;
-  width: 100%;
-`
+import { TextField } from '../../components/text-field'
 
 export const SignUpPage = () => {
   const [form, setForm] = useState({
@@ -37,28 +26,28 @@ export const SignUpPage = () => {
       onSubmit={handleSubmit} 
       linkUnder={{ path: '/auth/login', text: 'Go to log in' }}
     >
-      <Input
+      <TextField
         type="text"
         name="firstName"
         placeholder="First Name"
         value={form.firstName}
         onChange={handleChange}
       />
-      <Input
+      <TextField
         type="text"
         name="age"
         placeholder="Age"
         value={form.age}
         onChange={handleChange}
       />
-      <Input
+      <TextField
         type="text"
         name="username"
         placeholder="Username*"
         value={form.username}
         onChange={handleChange}
       />
-      <Input
+      <TextField
         type="password"
         name="password"
         placeholder="Password*"
