@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 import { Header } from "../header"
 import { Footer } from "../footer"
 import { useSizes } from '../../hooks/useSizes'
-import { Content } from "./styled"
+import { MainContent } from "./styled"
 
 export const MainLayout = () => {
   const headerRef = useRef()
@@ -18,12 +18,12 @@ export const MainLayout = () => {
     <div>
       <Header ref={headerRef}/>
       
-      <Content 
+      <MainContent 
         $footerH={sizes.footerH}
         $headerH={sizes.headerH}
       >
         <Outlet />
-      </Content>
+      </MainContent>
       
       <Footer ref={footerRef}/>
     </div>

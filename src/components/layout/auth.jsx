@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { Outlet } from "react-router-dom"
 import { useSizes } from "../../hooks/useSizes"
 import { Footer } from "../footer"
-import { Content } from "./styled"
+import { AuthContent } from "./styled"
 
 export const AuthLayout = () => {
   const footerRef = useRef()
@@ -13,9 +13,9 @@ export const AuthLayout = () => {
 
   return (
     <div>      
-      <Content $footerH={sizes.footerH}>
+      <AuthContent $footerH={sizes.footerH}>
         <Outlet />
-      </Content>
+      </AuthContent>
       
       <Footer ref={footerRef} />
     </div>
